@@ -11,4 +11,12 @@ class RegisterController extends Controller
     {
         return view('auth.register');
     }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|min:6',
+
+        ]);
+    }
 }
