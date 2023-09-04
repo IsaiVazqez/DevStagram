@@ -17,11 +17,21 @@
                 DevStagram
             </h1>
 
+            <?php if(auth()->guard()->check()): ?>
             <nav class="flex gap-2 items-center">
-                <a class="font-bold uppercase text-gray-600 text-sm" href="#">Login  </a>
-                <a class="font-bold uppercase text-gray-600 text-sm" href="/register">Create Account</a>
-
+                <a class="font-bold uppercase text-gray-600 text-sm" href="/dashboard">Dashboard</a>
+                <form action="<?php echo e(route('logout')); ?>" method="POST">
+                    <?php echo csrf_field(); ?>
+                    <button class="font-bold uppercase text-gray-600 text-sm" type="submit">Logout</button>
+                </form>
             </nav>
+            <?php endif; ?>
+            <?php if(auth()->guard()->guest()): ?>
+            <nav class="flex gap-2 items-center">
+                <a class="font-bold uppercase text-gray-600 text-sm" href="/login">Login  </a>
+                <a class="font-bold uppercase text-gray-600 text-sm" href="/register">Create Account</a>
+            </nav>
+            <?php endif; ?>
         </div>
     </header>
 
