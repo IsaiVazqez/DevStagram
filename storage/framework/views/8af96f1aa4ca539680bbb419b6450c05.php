@@ -19,7 +19,7 @@
 
             <?php if(auth()->guard()->check()): ?>
             <nav class="flex gap-2 items-center">
-                <a class="font-bold uppercase text-gray-600 text-sm" href="/dashboard">Dashboard</a>
+                <a class="font-bold uppercase text-gray-600 text-sm" href="<?php echo e(route('posts.index', ['user' => auth()->user()->username])); ?>">Dashboard</a>
                 <form action="<?php echo e(route('logout')); ?>" method="POST">
                     <?php echo csrf_field(); ?>
                     <button class="font-bold uppercase text-gray-600 text-sm" type="submit">Logout</button>
@@ -51,4 +51,6 @@
 </body>
 
 </html>
+
+
 <?php /**PATH /var/www/html/resources/views/layouts/app.blade.php ENDPATH**/ ?>

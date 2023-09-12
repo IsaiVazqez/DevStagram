@@ -37,6 +37,10 @@
                     @error('password')
                     <p class= "bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                 @enderror
+
+                <div class="mb-4 mt-3">
+                    <input type="checkbox" name="remember"> <label class=" uppercase text-gray-500 font-bold"> Stay logged in  </label>
+                </div>
             </div>
 
             <input type="submit" value="Iniciar Sesion" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold

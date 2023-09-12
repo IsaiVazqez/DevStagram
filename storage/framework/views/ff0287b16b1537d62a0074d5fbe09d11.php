@@ -49,6 +49,10 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+
+                <div class="mb-4 mt-3">
+                    <input type="checkbox" name="remember"> <label class=" uppercase text-gray-500 font-bold"> Stay logged in  </label>
+                </div>
             </div>
 
             <input type="submit" value="Iniciar Sesion" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold

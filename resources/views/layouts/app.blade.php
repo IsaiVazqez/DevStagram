@@ -19,7 +19,7 @@
 
             @auth
             <nav class="flex gap-2 items-center">
-                <a class="font-bold uppercase text-gray-600 text-sm" href="/dashboard">Dashboard</a>
+                <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('posts.index', ['user' => auth()->user()->username]) }}">Dashboard</a>
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
                     <button class="font-bold uppercase text-gray-600 text-sm" type="submit">Logout</button>
@@ -50,3 +50,5 @@
 </body>
 
 </html>
+
+
